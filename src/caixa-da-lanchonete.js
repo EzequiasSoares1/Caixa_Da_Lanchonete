@@ -32,6 +32,7 @@ class CaixaDaLanchonete {
     const cardapioItem = this.cardapio[item];
     return cardapioItem !== undefined ? cardapioItem : ' ';
   }
+
   procurarValorCardapio(item){
     return this.cardapio[item].valor;
   }
@@ -60,42 +61,56 @@ class CaixaDaLanchonete {
     return hasQuantidadeZero;
   }
 
-  verificarItens(itens, valor) {
-    
+  verificarItens(itens) {
     if (itens.length === 0) {
       return 'Não há itens no carrinho de compra!';
     } 
-    else if (this.verificarQtd(itens) || valor === 0) {
-      return 'Quantidade inválida!';
+    else if(!isNaN(itens)){
+      return 'Item inválido!';
     } 
-
-    const temItemPrincipal = itens.some((item) => {
-      const [produto] = item.split(',');
-      const itemEncontrado = this.procurarItemCardapio(produto);
-      return itemEncontrado && !itemEncontrado.descricao.includes('(extra');
-    });
+    else{
       
-    if (!temItemPrincipal) {
-      return 'Item extra não pode ser pedido sem o principal';
+      const ItemExiste = itens.some(element => {
+        const [produto] = element.split(',');
+        return this.cardapio[produto.trim()] !== undefined;
+      });
+
+      if(!ItemExiste){
+        return 'Item inválido!';
+      }
+      const temItemPrincipal = itens.some((item) => {
+        const [produto] = item.split(',');
+        const itemEncontrado = this.procurarItemCardapio(produto);
+        return itemEncontrado && !itemEncontrado.descricao.includes('(extra');
+      });
+    
+     
+      if (this.verificarQtd(itens) || this.calcularTotalPedido(itens) === 0) {
+        return 'Quantidade inválida!';
+      } 
+      else if (!temItemPrincipal) {
+        return 'Item extra não pode ser pedido sem o principal';
+      }
     }
 
     return '';
   }
   
-
-    calcularValorDaCompra(formaDePagamento, itens) {
+  calcularValorDaCompra(formaDePagamento, itens) {
     let valorTotal = 0;
-    const valorPedido = this.calcularTotalPedido(itens);
-
+    
     if (!['dinheiro', 'credito', 'debito'].includes(formaDePagamento)) {
         return 'Forma de pagamento inválida!';
     } else{
 
-      const result = this.verificarItens(itens, valorPedido);
+      const result = this.verificarItens(itens);
+      
       if(result !== ''){
         return result;
       }
     }
+
+    let valorPedido = this.calcularTotalPedido(itens);
 
     if (formaDePagamento === 'dinheiro') {
         valorTotal = this.calcularDesconto(valorPedido, 5);
