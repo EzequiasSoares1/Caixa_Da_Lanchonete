@@ -37,7 +37,7 @@ A solução deve aceitar três formas de pagamento: dinheiro, débito e crédito
 
    npm install
 
-###Testando sua Solução
+### Testando sua Solução
 
 - No terminal, ainda na pasta raiz do projeto, execute o seguinte comando para rodar os testes:
 
