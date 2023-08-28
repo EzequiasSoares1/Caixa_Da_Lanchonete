@@ -35,15 +35,15 @@ A solução deve aceitar três formas de pagamento: dinheiro, débito e crédito
 1. Abra o terminal na pasta raiz do projeto.
 2. Execute o seguinte comando para instalar as dependências do projeto:
 
-   npm install
+         npm install
 
 ### Testando sua Solução
 
 - No terminal, ainda na pasta raiz do projeto, execute o seguinte comando para rodar os testes:
 
-    npm test
+        npm test
     
-Os testes fornecidos verificarão se sua solução está correta de acordo com as regras do desafio.
+- Os testes fornecidos verificarão se sua solução está correta de acordo com as regras do desafio.
 
 
 ### Entrada (método calcularValorDaCompra):
