@@ -45,15 +45,15 @@ A solução deve aceitar três formas de pagamento: dinheiro, débito e crédito
     
 Os testes fornecidos verificarão se sua solução está correta de acordo com as regras do desafio.
 
-## Entrada e Saída:
 
-  ### Entrada (método calcularValorDaCompra):
-    O método calcularValorDaCompra recebe dois parâmetros:
+### Entrada (método calcularValorDaCompra):
 
-    - formaDePagamento: Uma string com os possíveis valores válidos: debito,             credito e dinheiro.
-    - itens: Uma array contendo os itens que serão comprados, onde cada item é uma       string contendo o código do item e a quantidade separados por vírgula.
+ O método calcularValorDaCompra recebe dois parâmetros:
 
- ### Saída:
-    - O retorno do método calcularValorDaCompra será uma string, que pode ser o 
-      valor total da compra ou uma mensagem de erro, de acordo com as regras do 
-      desafio.
+- formaDePagamento: Uma string com os possíveis valores válidos: debito, credito e dinheiro.
+- itens: Uma array contendo os itens que serão comprados, onde cada item é uma string contendo o código do item e a quantidade 
+  separados por vírgula.
+
+### Saída:
+- O retorno do método calcularValorDaCompra será uma string, que pode ser o valor total da
+  compra ou uma mensagem de erro, de acordo com as regras do desafio.
