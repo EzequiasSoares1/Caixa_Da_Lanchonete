@@ -1,59 +1,62 @@
-# Caixa da Lanchonete - Solução do Desafio de Automação
+# Lanchonete Checkout - Automation Challenge Solution
 
-Neste repositório, apresento a solução desenvolvida para o desafio de automação do Caixa da Lanchonete da DB. O objetivo deste desafio era construir a lógica que calcula o valor de uma compra de acordo com o cardápio, regras e descontos da Lanchonete.
+In this repository, I present the solution developed for the DB Lanchonete Checkout automation challenge. The objective of this challenge was to build the logic that calculates the value of a purchase according to the menu, rules, and discounts of the Lanchonete.
 
-## O Desafio
+## The Challenge
 
-O desafio consistia em criar uma solução capaz de calcular o valor total de uma compra com base nos itens do cardápio, considerando diferentes formas de pagamento, descontos e regras específicas.
+The challenge consisted of creating a solution capable of calculating the total value of a purchase based on the menu items, considering different forms of payment, discounts, and specific rules.
 
-### Cardápio
+### Menu
 
-O cardápio consiste em uma lista de itens com seus códigos, descrições e valores. Além disso, há a possibilidade de adicionar itens extras a alguns produtos.
+The menu consists of a list of items with their codes, descriptions, and values. Additionally, there is the possibility of adding extra items to some products.
 
-### Formas de Pagamento
+### Payment Methods
 
-A solução deve aceitar três formas de pagamento: dinheiro, débito e crédito. Cada forma de pagamento tem regras de desconto ou acréscimo no valor total da compra.
+The solution must accept three forms of payment: cash, debit, and credit. Each payment method has discount or surcharge rules on the total purchase value.
 
-### Descontos e Taxas
+### Discounts and Fees
 
-- Pagamento em dinheiro: 5% de desconto.
-- Pagamento a crédito: acréscimo de 3% no valor total.
+- Payment in cash: 5% discount.
+- Payment by credit: 3% surcharge on the total value.
 
-### Regras Adicionais
+### Additional Rules
 
-- Itens extras não podem ser pedidos sem o item principal correspondente.
-- Combos não são considerados itens principais.
-- É possível pedir mais de um item extra sem precisar de mais de um item principal.
-- Mensagens de erro específicas devem ser exibidas para cada situação inválida.
+- Extra items cannot be ordered without the corresponding main item.
+- Combos are not considered main items.
+- It is possible to order more than one extra item without needing more than one main item.
+- Specific error messages should be displayed for each invalid situation.
 
-## Como Rodar a Solução
+## How to Run the Solution
 
-### Pré-requisitos
-1. Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
+### Prerequisites
+1. Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-### Instalando Dependências
-1. Abra o terminal na pasta raiz do projeto.
-2. Execute o seguinte comando para instalar as dependências do projeto:
+### Installing Dependencies
+1. Open the terminal in the root folder of the project.
+2. Execute the following command to install project dependencies:
 
-         npm install
+    ```
+    npm install
+    ```
 
-### Testando sua Solução
+### Testing Your Solution
 
-- No terminal, ainda na pasta raiz do projeto, execute o seguinte comando para rodar os testes:
+- In the terminal, still in the root folder of the project, execute the following command to run the tests:
 
-        npm test
-    
-- Os testes fornecidos verificarão se sua solução está correta de acordo com as regras do desafio.
+    ```
+    npm test
+    ```
 
+- The provided tests will verify if your solution is correct according to the challenge rules.
 
-### Entrada (método calcularValorDaCompra):
+### Input (calculatePurchaseValue method):
 
- O método calcularValorDaCompra recebe dois parâmetros:
+The calculatePurchaseValue method receives two parameters:
 
-- formaDePagamento: Uma string com os possíveis valores válidos: debito, credito e dinheiro.
-- itens: Uma array contendo os itens que serão comprados, onde cada item é uma string contendo o código do item e a quantidade 
-  separados por vírgula.
+- paymentMethod: A string with the possible valid values: debit, credit, and cash.
+- items: An array containing the items to be purchased, where each item is a string containing the item code and quantity separated by a comma.
 
-### Saída:
-- O retorno do método calcularValorDaCompra será uma string, que pode ser o valor total da
-  compra ou uma mensagem de erro, de acordo com as regras do desafio.
+### Output:
+
+- The return of the calculatePurchaseValue method will be a string, which can be the total purchase value or an error message, according to the challenge rules.
+
